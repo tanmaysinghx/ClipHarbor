@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<VBox spacing="15" alignment="CENTER" xmlns:fx="http://javafx.com/fxml" fx:controller="org.ts.clipharbor.ClipHarborController">
+    <padding>
+        <Insets top="25" right="25" bottom="25" left="25"/>
+    </padding>
+
+    <Label style="-fx-font-size: 24px; -fx-font-weight: bold;">ClipHarbor Video Downloader</Label>
+
+    <TextField fx:id="urlField" promptText="Enter video page URL" prefWidth="450">
+        <tooltip>
+            <Tooltip text="Paste the URL where the videos are located"/>
+        </tooltip>
+    </TextField>
+
+    <HBox spacing="10" alignment="CENTER_LEFT" maxWidth="450">
+        <TextField fx:id="folderField" promptText="Select save folder..." prefWidth="370" editable="false">
+            <tooltip>
+                <Tooltip text="Select folder where videos will be saved"/>
+            </tooltip>
+        </TextField>
+        <Button text="Browse" onAction="#onBrowse">
+            <tooltip>
+                <Tooltip text="Choose folder to save videos"/>
+            </tooltip>
+        </Button>
+    </HBox>
+
+    <Button fx:id="downloadButton" text="Download" prefWidth="150" onAction="#onDownload" style="-fx-font-size: 16px;"/>
+
+    <ProgressBar fx:id="progressBar" prefWidth="450" progress="0"/>
+
+    <TextArea fx:id="statusArea" prefWidth="450" prefHeight="170" editable="false" wrapText="true" style="-fx-font-family: Consolas, monospace;"/>
+
+    <!-- Spacer to push footer down -->
+    <Region VBox.vgrow="ALWAYS"/>
+
+    <!-- Footer Label -->
+    <Label text="Version 1.0.0" style="-fx-font-size: 10px; -fx-text-fill: gray;"/>
+
+</VBox>
